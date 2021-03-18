@@ -1,5 +1,5 @@
-baseURL = "https://example.com"
-title = "Example Site"
+baseURL = "https://Offliner.github.io"
+title = "Offliner's Blog"
 theme = "erblog"
 paginate = 3
 languageCode = "en"
@@ -8,25 +8,26 @@ enableInlineShortcodes = true
 footnoteReturnLinkContents = "^"
 
 [params]
-    author = "Steve Francia"
+    author = "Offliner"
     badge = "orange"
     quote = "red"
-    notice = "Hello, world. This is a notification."
+    notice = "Hello! Welcome to Offliner's Blog."
     notice_color = "red"
     index_posts_num = 5
     google_search = true
     # logo = "//blog.ertuil.top/avater.png"
+    portrait = "images/Offliner.png"
     bio = """
-    <p> This is BIO. You can write something here. </p>
+    <p> Hi there, l'm Offliner. </p>
     <br />
-    <p>Also all html tags such as <a href="https://github.com/ertuil/erblog">link</a> are a good here.</p>
+    <p>Try anything I want to try!</p>
     """
     # copyright = "Copyright © 2008–2019, Steve Francia and the Hugo Authors; all rights reserved."
 
 
 [[menu.main]]
     identifier = "about"
-    name = "About"
+    name = "Offliner"
     url = "/about/"
     weight = 10
 
@@ -54,21 +55,21 @@ tag = "tags"
 series = "series"
 
 [[menu.icon]]
-    url = "mailto:username@mail.com"
+    url = "eric21904@gmail.com"
     name = "envelope-o"
     weight = 1
 
 [[menu.icon]]
-    url = "https://github.com/username/"
+    url = "https://github.com/Offliners/"
     name = "github"
     weight = 1
 
 [[menu.icon]]
-    url = "https://twitter.com/username"
+    url = "https://twitter.com/Offliner8"
     name = "twitter"
     weight = 1
 
 [[menu.icon]]
-    url = "https://www.instagram.com/username/"
+    url = "https://www.instagram.com/offliner21904/"
     name = "instagram"
     weight = 1
