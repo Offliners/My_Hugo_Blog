@@ -15,33 +15,32 @@ footnoteReturnLinkContents = "^"
     notice_color = "red"
     index_posts_num = 5
     google_search = true
-    # logo = "//blog.ertuil.top/avater.png"
+    math = true
+    logo = "images/Offliner.png"
     portrait = "images/Offliner.png"
     bio = """
     <p> Hi there, l'm Offliner. </p>
     <br />
     <p>Try anything I want to try!</p>
     """
-    # copyright = "Copyright © 2008–2019, Steve Francia and the Hugo Authors; all rights reserved."
 
+[[menu.main]]
+    identifier = "gallery"
+    name = "Gallery"
+    url = "/gallery/"
+    weight = 1
+
+[[menu.main]]
+    identifier = "home"
+    name = "home"
+    url = "/"
+    weight = 3
 
 [[menu.main]]
     identifier = "about"
     name = "Offliner"
     url = "/about/"
-    weight = 10
-
-# [[menu.main]]
-#     identifier = "zone"
-#     name = "Zone"
-#     url = "/zone/"
-#     weight = 10
-
-[[menu.footer]]
-    identifier = "home"
-    name = "home"
-    url = "/"
-    weight = 1
+    weight = 2
 
 [[menu.footer]]
     identifier = "about"
@@ -52,10 +51,9 @@ footnoteReturnLinkContents = "^"
 [taxonomies]
 category = "categories"
 tag = "tags"
-series = "series"
 
 [[menu.icon]]
-    url = "eric21904@gmail.com"
+    url = "mailto:eric21904@gmail.com"
     name = "envelope-o"
     weight = 1
 
