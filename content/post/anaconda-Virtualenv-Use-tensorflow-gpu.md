@@ -1,7 +1,7 @@
 ---
 title: "Anaconda Virtual Environment Use tensorflow-gpu"
 date: 2021-03-30T22:19:35+08:00
-draft: true
+draft: false
 
 categories:
   - Anaconda
