@@ -1,4 +1,4 @@
-baseURL = "https://Offliner.github.io"
+baseURL = "https://Offliners.github.io"
 title = "Offliner's Blog"
 theme = "erblog"
 paginate = 3
