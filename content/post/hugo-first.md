@@ -5,8 +5,10 @@ draft: false
 
 categories:
   - hugo
+  - Web
 tags:
   - hugo
+  - Web
 
 ---
 
