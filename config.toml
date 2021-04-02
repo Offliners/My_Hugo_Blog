@@ -7,6 +7,7 @@ DefaultContentLanguage = "en"
 enableInlineShortcodes = true
 footnoteReturnLinkContents = "^"
 disqusShortname = "offliners"
+googleAnalytics = "G-WFQ2VM3C00"
 
 [params]
     author = "Offliner"
