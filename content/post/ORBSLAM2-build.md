@@ -2,6 +2,7 @@
 title: "ORBSLAM2 Build on Windows 10"
 date: 2021-04-01T01:31:05+08:00
 draft: false
+toc: true
 
 categories:
   - ORBSLAM2
@@ -27,7 +28,7 @@ tags:
 
 記得將`YOUR_OWN_PATH\opencv\build\x64\vc14\bin`與`YOUR_OWN_PATH\opencv\build`新增至環境變數中，資料夾路徑視OpenCV的安裝目錄而定
 
-## 安裝 ORBSLAM2 for Windows
+## 安裝ORBSLAM2 for Windows
 #### 下載 ORBSLAM2
 Download : [Link](https://github.com/Phylliida/orbslam-windows)
 

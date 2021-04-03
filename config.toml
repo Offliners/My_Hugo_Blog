@@ -2,8 +2,8 @@ baseURL = "https://Offliners.github.io"
 title = "Offliner's Blog"
 theme = "erblog"
 paginate = 3
-languageCode = "en"
-DefaultContentLanguage = "en"
+languageCode = "zh"
+DefaultContentLanguage = "zh"
 enableInlineShortcodes = true
 footnoteReturnLinkContents = "^"
 disqusShortname = "offliners"
@@ -25,6 +25,7 @@ googleAnalytics = "G-WFQ2VM3C00"
     <br />
     <p>Try anything I want to try!</p>
     """
+    description = "No code, No life"
 
 [[menu.main]]
     identifier = "gallery"
