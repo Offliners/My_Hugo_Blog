@@ -1,5 +1,5 @@
 ---
-title: "Machine / Deep Learning (NTU-ML 2021 Spring) Week 1"
+title: "NTU - 機器學習 Week 1 - Introduction of ML/DL"
 date: 2021-04-03T17:05:34+08:00
 draft: false
 toc: true
