@@ -18,9 +18,9 @@ tags:
 
 NTUML 2021 Spring Course Syllabus: [Link](https://speech.ee.ntu.edu.tw/~hylee/ml/2021-spring.html)
 
-Youtube Video Link (Chinese): [Video 1](https://www.youtube.com/watch?v=WeHM2xpYQpw) [Video 2](https://www.youtube.com/watch?v=QW6uINn7uGk)
+Youtube Video Link (Chinese): [Video](https://www.youtube.com/watch?v=WeHM2xpYQpw)
 
-Youtube Video Link (English): [Video 1](https://youtu.be/3qgKpBptyFY) [Video 2](https://youtu.be/yz7QS1I6omw)
+Youtube Video Link (English): [Video](https://youtu.be/3qgKpBptyFY)
 
 ## Framework of ML
 ![framework](/2021NTUML/Week2/framework.JPG)
@@ -94,5 +94,5 @@ Youtube Video Link (English): [Video 1](https://youtu.be/3qgKpBptyFY) [Video 2](
 除了overfitting，還會有一種錯誤形式是mismatch，有些人會說mismatch是一種overfitting，但這是名詞定義問題。一般的overfitting可以透過蒐集更多的資料來克服，但mismatch是指說訓練資料與測試資料分布不同
 
 ![Mismatch](/2021NTUML/Week2/mismatch.JPG)
-如在Homework 11，訓練資料與測試資料完全不同，因此增加訓練資料沒有用。因此要解決這種問題，等待homework 11再講。要判斷是否發生Mismatch，要看對資料本身的理解，要對訓練資料與測試資料有些理解才能判斷
+如在Homework 11，訓練資料與測試資料完全不同，因此增加訓練資料沒有用。所以要解決這種問題，等待homework 11再講。要判斷是否發生Mismatch，要看對資料本身的理解，對訓練資料與測試資料有些理解才能判斷
 
