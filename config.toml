@@ -18,12 +18,15 @@ googleAnalytics = "G-WFQ2VM3C00"
     index_posts_num = 5
     google_search = true
     math = true
+    favicon = "images/Offliner.png"
     logo = "images/Offliner.png"
     portrait = "images/Offliner.png"
     bio = """
     <p> Hi there, l'm Offliner. </p>
     <br />
     <p>Try anything I want to try!</p>
+    <br />
+    <p>The scariest thing when writing a program is that the program has errors but it runs successfully!</p>
     """
     description = "No code, No life"
 
