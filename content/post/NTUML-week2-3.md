@@ -56,7 +56,7 @@ Youtube Video Link (English): [Video](https://youtu.be/MNoEQ9w-AbE)
 假設有一個loss，有許多local minima，但local minima有分好壞，那怎麼區分好壞呢?如果local minima落在峽谷中(上圖右側)，會認為是壞minima;反之，落在平原中會是好的minima。會這樣區分是因為，測試與訓練的loss或有些差別，平原型的minima差異較小，峽谷型的minima會有較大的loss差異。而小batch因為update參數的方向都不同，容易跳出峽谷的loss，容易落在平原型的minima;對大batch來說，反而容易落在峽谷的minima
 
 ![Small Batch v.s. Large Batch 7](/2021NTUML/Week2/vs9.JPG)
-那有沒有辦法僵固兩者的優點呢?以下的論文有探討
+那有沒有辦法堅固兩者的優點呢?以下的論文有探討
 * Large Batch Optimization for Deep Learning: Training BERT in 76 minutes (https://arxiv.org/abs/1904.00962)
 * Extremely Large Minibatch SGD: Training ResNet-50 on ImageNet in 15 Minutes (https://arxiv.org/abs/1711.04325)
 * Stochastic Weight Averaging in Parallel: Large-Batch Training That Generalizes Well (https://arxiv.org/abs/2001.02312)
