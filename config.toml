@@ -13,22 +13,22 @@ googleAnalytics = "G-WFQ2VM3C00"
     author = "Offliner"
     badge = "orange"
     quote = "red"
-    notice = "Hello! Welcome to Offliner's Blog."
-    notice_color = "red"
+    notice = "The scariest thing when writing a program is that the program has errors but it runs successfully!"
+    notice_color = "green"
     index_posts_num = 5
     google_search = true
     math = true
-    favicon = "images/Offliner.png"
+    favicon = "images/dino.png"
     logo = "images/Offliner.png"
     portrait = "images/Offliner.png"
     bio = """
-    <p> Hi there, l'm Offliner. </p>
-    <br />
-    <p>Try anything I want to try!</p>
-    <br />
-    <p>The scariest thing when writing a program is that the program has errors but it runs successfully!</p>
+    <p></p>
+    <p></p>
     """
     description = "No code, No life"
+    typewriter = [
+            'Hi there, l am Offliner', 'Nice to meet you', 'どうぞよろしくお願いします', '請多多指教~'
+    ]
 
 [[menu.main]]
     identifier = "gallery"
