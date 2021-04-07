@@ -77,3 +77,23 @@ tag = "tags"
     url = "https://www.instagram.com/offliner21904/"
     name = "instagram"
     weight = 1
+
+[[menu.icon]]
+    url = "https://www.linkedin.com/in/%E6%94%BF%E5%BD%A5-%E5%90%B3-a24636202/"
+    name = "linkedin"
+    weight = 1
+
+[[menu.icon]]
+    url = "https://www.facebook.com/profile.php?id=100003751916370"
+    name = "facebook-square"
+    weight = 1
+
+[[menu.icon]]
+    url = "https://t.me/offliner21904"
+    name = "telegram"
+    weight = 1
+
+[[menu.icon]]
+    url = "https://steamcommunity.com/profiles/76561198838016168/"
+    name = "steam"
+    weight = 1
