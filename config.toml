@@ -6,7 +6,7 @@ languageCode = "zh"
 DefaultContentLanguage = "zh"
 enableInlineShortcodes = true
 footnoteReturnLinkContents = "^"
-disqusShortname = "offliners"
+# disqusShortname = "offliners"
 googleAnalytics = "G-WFQ2VM3C00"
 
 [params]
