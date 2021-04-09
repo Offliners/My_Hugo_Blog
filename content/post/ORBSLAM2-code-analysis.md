@@ -12,7 +12,7 @@ tags:
   - code analysis
 ---
 
-* ORB-SLAM: a Versatile and Accurate Monocular SLAM System
+* ORB-SLAM2: an Open-Source SLAM System for Monocular, Stereo and RGB-D Cameras
 (https://arxiv.org/abs/1610.06475)
 * `ORBSLAM2` code : https://github.com/raulmur/ORB_SLAM2
 * `ORBSLAM2 for Windows` code: https://github.com/phdsky/ORBSLAM24Windows 
