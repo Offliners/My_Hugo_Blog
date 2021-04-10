@@ -24,8 +24,12 @@ googleAnalytics = "G-WFQ2VM3C00"
     bio = """
     <p>Name : Zheng-Yan Wu</p>
     <p>Birthday : 1999/03/28</p>
-    <p>Hobby : Playing Chess or Go</p>
+    <p>Native country : Taiwan</p>
+    <p>Interests : Playing Chess or Go</p>
+    <p>Job : Student</p>
+    <p>Expertise : Mechanical & Electrical engineering</p> 
     <p>Programming Languages : C, C++, C#, Python, HTML5</p>
+    <p>Motto : Never Forget How You Got Here</p>
     """
     description = "No code, No life"
     typewriter = [
