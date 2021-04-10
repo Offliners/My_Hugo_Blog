@@ -1,7 +1,7 @@
 ---
 title: "NTU 機器學習"
 date: 2021-04-10T14:55:15+08:00
-draft: true
+draft: false
 ---
 # NTU 機器學習 (by Prof. Hung-Yi Lee)
 |Topic|Link|
