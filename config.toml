@@ -33,7 +33,7 @@ googleAnalytics = "G-WFQ2VM3C00"
 [[menu.main]]
     identifier = "zone"
     name = "Archives"
-    url = "/zone"
+    url = "/zone/"
     weight = 1
 
 [[menu.main]]
