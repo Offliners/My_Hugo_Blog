@@ -22,8 +22,10 @@ googleAnalytics = "G-WFQ2VM3C00"
     logo = "images/Offliner.png"
     portrait = "images/Offliner.png"
     bio = """
-    <p></p>
-    <p></p>
+    <p>Name : Zheng-Yan Wu</p>
+    <p>Birthday : 1999/03/28</p>
+    <p>Hobby : Playing Chess or Go</p>
+    <p>Programming Languages : C, C++, C#, Python, HTML5</p>
     """
     description = "No code, No life"
     typewriter = [
@@ -38,7 +40,7 @@ googleAnalytics = "G-WFQ2VM3C00"
 
 [[menu.main]]
     identifier = "about"
-    name = "Offliner"
+    name = "About"
     url = "/about/"
     weight = 2
 

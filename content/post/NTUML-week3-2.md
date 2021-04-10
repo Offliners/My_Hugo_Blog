@@ -3,6 +3,7 @@ title: "NTU - 機器學習 Week 3 - Loss Function: Classification"
 date: 2021-04-06T15:46:03+08:00
 draft: false
 toc: true
+comment: true
 
 categories:
   - ML

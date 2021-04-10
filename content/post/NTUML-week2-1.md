@@ -3,6 +3,7 @@ title: "NTU - 機器學習 Week 2 - Guideline of ML: overfit"
 date: 2021-04-03T23:32:44+08:00
 draft: false
 toc: true
+comment: true
 
 categories:
   - ML

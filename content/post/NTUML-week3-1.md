@@ -3,6 +3,7 @@ title: "NTU - 機器學習 Week 3 - Tips for Training: Adaptive Learning Rate"
 date: 2021-04-06T14:24:24+08:00
 draft: false
 toc: true
+comment: true
 
 categories:
   - ML

@@ -3,6 +3,7 @@ title: "NTU - 機器學習 Week 3 - CNN"
 date: 2021-04-08T21:12:19+08:00
 draft: false
 toc: true
+comment: true
 
 categories:
   - ML

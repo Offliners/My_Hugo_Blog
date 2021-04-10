@@ -3,6 +3,7 @@ title: "NTU - 機器學習 Week 2 - Critical Point: small gradient"
 date: 2021-04-05T00:38:19+08:00
 draft: false
 toc: true
+comment: true
 
 categories:
   - ML

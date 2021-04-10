@@ -3,6 +3,7 @@ title: "NTU - 機器學習 Week 2 - Tips for Training: Batch and Momentum"
 date: 2021-04-05T21:55:10+08:00
 draft: false
 toc: true
+comment: true
 
 categories:
   - ML
