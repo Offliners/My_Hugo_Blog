@@ -60,6 +60,18 @@ googleAnalytics = "G-WFQ2VM3C00"
     url = "/about/"
     weight = 2
 
+[[menu.footer]]
+    identifier = "zone"
+    name = "Archives"
+    url = "/zone/"
+    weight = 1
+
+[[menu.footer]]
+    identifier = "home"
+    name = "Home"
+    url = "/"
+    weight = 3
+
 [taxonomies]
 category = "categories"
 tag = "tags"
