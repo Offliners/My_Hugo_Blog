@@ -31,22 +31,22 @@ googleAnalytics = "G-WFQ2VM3C00"
     ]
 
 [[menu.main]]
-    identifier = "gallery"
-    name = "Gallery"
-    url = "/gallery/"
+    identifier = "zone"
+    name = "Archives"
+    url = "/zone"
     weight = 1
-
-[[menu.main]]
-    identifier = "home"
-    name = "home"
-    url = "/"
-    weight = 3
 
 [[menu.main]]
     identifier = "about"
     name = "Offliner"
     url = "/about/"
     weight = 2
+
+[[menu.main]]
+    identifier = "home"
+    name = "Home"
+    url = "/"
+    weight = 3
 
 [[menu.footer]]
     identifier = "about"
