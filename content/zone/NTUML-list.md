@@ -15,3 +15,4 @@ draft: false
 |CNN|[Link](https://offliners.github.io/post/ntuml-week3-3/)|
 |PAC Learning||
 |Self-Attention|[Link](https://offliners.github.io/post/ntuml-week5-1/)|
+|Normalization|[Link](https://offliners.github.io/post/ntuml-week5-2/)|
