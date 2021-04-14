@@ -4,6 +4,7 @@ date: 2021-04-10T14:55:15+08:00
 draft: false
 ---
 # NTU 機器學習 (by Prof. Hung-Yi Lee)
+![cover](/2021NTUML/cover.png)
 |Topic|Link|
 |-|-|
 |Introduction of ML/DL|[Link](https://offliners.github.io/post/ntuml-week1/)|
