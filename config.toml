@@ -30,7 +30,6 @@ googleAnalytics = "G-WFQ2VM3C00"
     <p>Expertise : Mechanical & Electrical engineering</p> 
     <p>Programming Languages : C, C++, C#, Python</p>
     <p>Motto : Never Forget How You Got Here</p>
-    <p>CV : <a href="/CV/cv.pdf">Download</a></p>
     """
     description = "No code, No life"
     typewriter = [
