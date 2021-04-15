@@ -18,3 +18,4 @@ draft: false
 |Self-Attention|[Link](https://offliners.github.io/post/ntuml-week5-1/)|
 |Normalization|[Link](https://offliners.github.io/post/ntuml-week5-2/)|
 |Transformer|[Link](https://offliners.github.io/post/ntuml-week7-1/)|
+|GAN|[Link](https://offliners.github.io/post/ntuml-week7-2/)|
