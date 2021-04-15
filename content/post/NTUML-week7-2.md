@@ -78,6 +78,7 @@ GAN有多種的變形，多到許多不同GAN的變形卻有相同的名字，�
 ![Anime Face Generation Result 1](/2021NTUML/Week7/result-4.JPG)
 ![Anime Face Generation Result 1](/2021NTUML/Week7/result-5.JPG)
 ![Anime Face Generation Result 1](/2021NTUML/Week7/result-6.JPG)
+
 隨著update次數增加，圖像呈現越來越好
 
 ### StyleGAN
