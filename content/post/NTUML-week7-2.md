@@ -117,5 +117,34 @@ GAN有多種的變形，多到許多不同GAN的變形卻有相同的名字，�
 
 * f-GAN: Training Generative Neural Samplers using Variational Divergence Minimization : [Link](https://arxiv.org/abs/1606.00709)
 
-## Tips for GAN
+GAN是以很難訓練聞名，很多人認為是因為沒有Minimize JS Divergence，上述的論文提告有方法可以Minimize JS Divergence，但即使做到這樣表現還是沒有很好
+
+## JS divergence is not suitable
+![JS divergence is not suitable](/2021NTUML/Week7/js.JPG)
+大多數的情況，隨機的分布與資料實際的分布重疊部分非常少，理由有兩個 : 
+1. 由於這兩個分布都是要產生圖片，但圖片其實是高維空間中低維度的manifold，在高維空間中隨便sample一個點通常無法構成一個二次元人物的頭像，因此從資料特性來看，他們都像二維空間的兩條線，除非剛好重合，否則相交的範圍幾乎可以忽略
+2. 我們從來不知道這兩個的分布範圍長什麼樣子，可能重合部分很多，但因為實際都是透過sample，因此如果sample不夠多不夠密，那從分布來看還是沒有重疊
+
+![JS divergence is not suitable](/2021NTUML/Week7/js-1.JPG)
+如果兩分布幾乎沒有重疊的話，那JS divergence計算出來會是log2，因此不管兩分布距離多遠，只要沒有重合就會是log2。距離遠近都是log2使得訓練更新參數時無法使Generator產生的新分布靠實際分布更近。實際操作來看，使用JS divergence時，訓練Binary Classifier分辨圖片的正確率會是100%，因為sample的圖片太少，Discriminator容易分辨出來
+
+## Wasserstein distance
+![Wasserstein distance](/2021NTUML/Week7/wasserstein.JPG)
+由於JS divergence有上述問題，因此有人使用`Wasserstein distance`來計算分布的平均距離
+
+![Wasserstein distance 1](/2021NTUML/Week7/wasserstein-1.JPG)
+但對於複雜的分布，計算Wasserstein distance會非常困難，假設有P、Q兩種不同的分布，要把P堆成像Q就有很多種方法，因此就有許多不同的平均距離，那就有了一個定義，窮舉所有可能的方法並計算平均距離，最短的就是Wasserstein distance
+
+![Wasserstein distance 2](/2021NTUML/Week7/wasserstein-2.JPG)
+先不管計算Wasserstein distance有多複雜，Wasserstein distance能使兩分布距離縮短，就能使Generator進步
+
+## WGAN
+![WGAN](/2021NTUML/Week7/wgan.JPG)
+當使用Wasserstein distance取代JS divergence時的GAN就是`WGAN`，藉由解上述Optimization問題得到的值就是Wasserstein distance。這裡還有個限制，就是D function必須是`1-Lipschitz function`，也就是要足夠平滑。值觀來想，若沒有平滑的限制，會使兩邊的期望值趨近無限大的正值與無限大的負值，使訓練無法收斂
+
+![WGAN 1](/2021NTUML/Week7/wgan-1.JPG)
+那要怎麼做到這個限制? 一開始的WGAN，將訓練的weight限制在一定的範圍內，但這方法不一定能達到這限制。因此之後提了許多方法來更好訓練WGAN，想了解更多可參考以下連結:
+* Improved Training of Wasserstein GANs : [Link](https://arxiv.org/abs/1704.00028)
+* Spectral Normalization for Generative Adversarial Networks : [Link](https://arxiv.org/abs/1802.05957)
+
 
