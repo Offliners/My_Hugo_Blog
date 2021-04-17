@@ -9,7 +9,7 @@ draft: false
 
 |Topic|Link|
 |-|-|
-|System 入口|[Link](https://offliners.github.io/post/ORBSLAM2-code-1/)|
+|System 入口|[Link](https://offliners.github.io/post/orbslam2-code-1/)|
 |Tracking 線程|`TBD`|
 |LocalMapping 線程|`TBD`|
 |LocalClosing 線程 (迴路檢測)|`TBD`|
