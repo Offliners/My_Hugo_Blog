@@ -14,7 +14,7 @@ draft: false
 |Tips for Training: Adaptive Learning Rate|[Link](https://offliners.github.io/post/ntuml-week3-1/)|
 |Loss Function: Classification|[Link](https://offliners.github.io/post/ntuml-week3-2/)|
 |CNN|[Link](https://offliners.github.io/post/ntuml-week3-3/)|
-|PAC Learning||
+|PAC Learning|`TBD`|
 |Self-Attention|[Link](https://offliners.github.io/post/ntuml-week5-1/)|
 |Normalization|[Link](https://offliners.github.io/post/ntuml-week5-2/)|
 |Transformer|[Link](https://offliners.github.io/post/ntuml-week7-1/)|
