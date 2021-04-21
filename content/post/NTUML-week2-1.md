@@ -19,9 +19,9 @@ tags:
 
 NTUML 2021 Spring Course Syllabus: [Link](https://speech.ee.ntu.edu.tw/~hylee/ml/2021-spring.html)
 
-Youtube Video Link (Chinese): [Video](https://www.youtube.com/watch?v=WeHM2xpYQpw)
+Youtube Video Link (Chinese): [`Video`](https://www.youtube.com/watch?v=WeHM2xpYQpw)
 
-Youtube Video Link (English): [Video](https://youtu.be/3qgKpBptyFY)
+Youtube Video Link (English): [`Video`](https://youtu.be/3qgKpBptyFY)
 
 ## Framework of ML
 ![framework](/2021NTUML/Week2/framework.JPG)

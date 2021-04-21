@@ -19,9 +19,9 @@ tags:
 
 NTUML 2021 Spring Course Syllabus: [Link](https://speech.ee.ntu.edu.tw/~hylee/ml/2021-spring.html)
 
-Youtube Video Link (Chinese): [Video 1](https://www.youtube.com/watch?v=n9TlOhRjYoc) [Video 2](https://youtu.be/N6aRv06iv2g)
+Youtube Video Link (Chinese): [`Video 1`](https://www.youtube.com/watch?v=n9TlOhRjYoc) [`Video 2`](https://youtu.be/N6aRv06iv2g)
 
-Youtube Video Link (English): [Video 1](https://www.youtube.com/watch?v=zmOuJkH9l9M) [Video 2](https://www.youtube.com/watch?v=fPTj5Zh1ACo)
+Youtube Video Link (English): [`Video 1`](https://www.youtube.com/watch?v=zmOuJkH9l9M) [`Video 2`](https://www.youtube.com/watch?v=fPTj5Zh1ACo)
 
 ## Applications of Sequence-to-sequence (Seq2seq)
 ![Sequence-to-sequence](/2021NTUML/Week7/seq2seq.JPG)

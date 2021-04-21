@@ -19,9 +19,9 @@ tags:
 
 NTUML 2021 Spring Course Syllabus: [Link](https://speech.ee.ntu.edu.tw/~hylee/ml/2021-spring.html)
 
-Youtube Video Link (Chinese): [Video 1](https://youtu.be/Ye018rCVvOo) [Video 2](https://youtu.be/bHcJCp2Fyxs)
+Youtube Video Link (Chinese): [`Video 1`](https://youtu.be/Ye018rCVvOo) [Video 2](https://youtu.be/bHcJCp2Fyxs)
 
-Youtube Video Link (English): [Video 1](https://www.youtube.com/watch?v=Y87Ct23H3Kw) [Video 2](hhttps://www.youtube.com/watch?v=O69EqgzUl9U)
+Youtube Video Link (English): [`Video 1`](https://www.youtube.com/watch?v=Y87Ct23H3Kw) [Video 2](hhttps://www.youtube.com/watch?v=O69EqgzUl9U)
 
 ## What is Machine Learing?
 Q : 什麼是機器學習?

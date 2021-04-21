@@ -19,9 +19,9 @@ tags:
 
 NTUML 2021 Spring Course Syllabus: [Link](https://speech.ee.ntu.edu.tw/~hylee/ml/2021-spring.html)
 
-Youtube Video Link (Chinese): [Video](https://www.youtube.com/watch?v=O2VkP8dJ5FE)
+Youtube Video Link (Chinese): [`Video`](https://www.youtube.com/watch?v=O2VkP8dJ5FE)
 
-Youtube Video Link (English): [Video](https://www.youtube.com/watch?v=jqVONJ-Wn8w)
+Youtube Video Link (English): [`Video`](https://www.youtube.com/watch?v=jqVONJ-Wn8w)
 
 ## Classification as Regression?
 ![Classification as Regression?](/2021NTUML/Week3/as.JPG)

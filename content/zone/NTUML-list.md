@@ -19,3 +19,4 @@ draft: false
 |Normalization|[Link](https://offliners.github.io/post/ntuml-week5-2/)|
 |Transformer|[Link](https://offliners.github.io/post/ntuml-week7-1/)|
 |GAN|[Link](https://offliners.github.io/post/ntuml-week7-2/)|
+|BERT|[Link](https://offliners.github.io/post/ntuml-week8/)|

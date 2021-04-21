@@ -19,9 +19,9 @@ tags:
 
 NTUML 2021 Spring Course Syllabus: [Link](https://speech.ee.ntu.edu.tw/~hylee/ml/2021-spring.html)
 
-Youtube Video Link (Chinese): [Video](https://www.youtube.com/watch?v=zzbr1h9sF54)
+Youtube Video Link (Chinese): [`Video`](https://www.youtube.com/watch?v=zzbr1h9sF54)
 
-Youtube Video Link (English): [Video](https://youtu.be/MNoEQ9w-AbE)
+Youtube Video Link (English): [`Video`](https://youtu.be/MNoEQ9w-AbE)
 
 ## Optimization with Batch
 ![Batch](/2021NTUML/Week2/batch.JPG)
