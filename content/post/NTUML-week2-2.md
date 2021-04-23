@@ -6,9 +6,7 @@ toc: true
 comment: true
 
 categories:
-  - ML
-  - DL
-  - Hung Yi - Lee
+  - NTU 機器學習 note
 tags:
   - Machine Learning
   - Deep Learning

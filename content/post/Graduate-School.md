@@ -5,6 +5,9 @@ draft: false
 toc: true
 comment: true
 
+categories:
+  - 研究所推甄心得
+
 tags:
   - Graduate-School
 ---

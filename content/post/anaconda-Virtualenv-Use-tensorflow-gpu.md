@@ -6,8 +6,8 @@ toc: true
 comment: true
 
 categories:
-  - Anaconda
-  - python
+  - 環境建立 
+
 tags:
   - tensorflow-gpu
   - Anaconda-virtual-environment

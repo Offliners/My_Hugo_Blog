@@ -6,8 +6,7 @@ toc: true
 comment: true
 
 categories:
-  - ORBSLAM
-  - code analysis
+  - ORBSLAM2 程式碼解析
 tags:
   - ORBSLAM
   - code analysis

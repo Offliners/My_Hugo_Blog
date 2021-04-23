@@ -6,8 +6,7 @@ toc: true
 comment: true
 
 categories:
-  - hugo
-  - Web
+  - 環境建立
 tags:
   - hugo
   - Web

@@ -6,8 +6,7 @@ toc: true
 comment: true
 
 categories:
-  - ORBSLAM2
-  - C++
+  - 環境建立 
 tags:
   - ORBSLAM2
   - CMake
