@@ -118,3 +118,49 @@ BERT會輸入兩個句子組成的Sequence，並從CLS對應的輸出來判斷�
 Google已經有提供T5這個預訓練的模型，將多種擾動的方式用於其中
 
 ## Why does BERT work?
+![Why does BERT work?](/2021NTUML/Week8/work.JPG)
+那為什麼BERT有用呢? 首先提供最常見的解釋，將Sequence輸入BERT後得到的輸出向量畫出來，可以發現意思越相近的字，向量會越接近，且BERT會考慮上下文，因此即使是同一個字但因為上下文不同，所以對應的向量也不同
+
+![Why does BERT work? 1](/2021NTUML/Week8/work-1.JPG)
+例如將"喝蘋果汁"與"蘋果電腦"輸入BERT中，代表"蘋"的向量會不一樣的，因為BERT是encoder，上下文不同計算出來的相似度也不同
+
+![Why does BERT work? 2](/2021NTUML/Week8/work-2.JPG)
+將10個"蘋"來計算相似度，可以發現代表真實蘋果意思之間的向量相似度較接近(顏色較明亮)，代表真實蘋果意思與代表蘋果品牌的向量相似度較差(顏色較黯淡)，反之也是如此
+
+![Why does BERT work? 3](/2021NTUML/Week8/work-3.JPG)
+BERT能在文字中表現較好是因為透過遮蔽資訊，從上下文中來預測這是什麼字。過去word embedding中CBOW的技術與BERT也是相同的做法，但這技術由於計算能力的限制因此只用線性模型做，但現今計算能力大幅提升，使這方法結合深度學習成了BERT，因此BERT又叫做`Contextualized word embedding`
+
+![Why does BERT work? 4](/2021NTUML/Week8/work-4.JPG)
+那將BERT應用在文字以外的資料呢? 如蛋白質、DNA或音樂分類等
+
+![Why does BERT work? 5](/2021NTUML/Week8/work-5.JPG)
+舉DNA序列為例，將不同的A、T、C、G用英文的字來取代，再輸入BERT來做分類
+
+![Why does BERT work? 6](/2021NTUML/Week8/work-6.JPG)
+可以發現BERT表現比沒用的好，因此即使輸入資料沒有什麼語意也能有好的表現
+
+若想更了解BERT可參考以下連結 : 
+* BERT and its family - Introduction and Fine-tune : [Video](https://youtu.be/1_gRK9EIQpc)
+* BERT and its family - ELMo, BERT, GPT, XLNet, MASS, BART, UniLM, ELECTRA, and more : [Video](https://youtu.be/Bywo7m6ySlk)
+
+## Multi-lingual BERT
+![Multi-lingual BERT](/2021NTUML/Week8/multi.JPG)
+`Multi-lingual BERT`會輸入各種語言，如中文、英文、法文等
+
+![Multi-lingual BERT 1](/2021NTUML/Week8/multi-1.JPG)
+總共做了104種語言訓練，神奇的是將這種BERT做英文的QA訓練，它自動就會學會另一種語言的QA
+
+![Multi-lingual BERT 2](/2021NTUML/Week8/multi-2.JPG)
+透過上圖比較，Multi-lingual BERT即使是使用英文QA做Fine-tune，測試在中文QA資料集的F1 score也能有好表現
+
+![Multi-lingual BERT 3](/2021NTUML/Week8/multi-3.JPG)
+對Multi-lingual BERT而言，意思相近的字即使語言不同，也能將這些字的輸出向量歸在同一類
+
+![Multi-lingual BERT 4](/2021NTUML/Week8/multi-4.JPG)
+那有些人可能會覺得奇怪，對Multi-lingual BERT語言不同還是能完成任務，那不會搞混嗎? 例如輸入英文得到中文的答案。因此Multi-lingual BERT還是知道語言的資訊
+
+![Multi-lingual BERT 5](/2021NTUML/Week8/multi-5.JPG)
+若將英文資訊平均值與中文資訊平均值相減，將英文輸入BERT得到的輸出向量加上這個差值，那是否可以得到中文的答案? 
+
+![Multi-lingual BERT 6](/2021NTUML/Week8/multi-6.JPG)
+實驗結果證實這個假設，雖然不是個很好的翻譯，Multi-lingual BERT表面上看起來把不同語言同樣意思歸在同一類，但仍然有語言的資訊來做區分
