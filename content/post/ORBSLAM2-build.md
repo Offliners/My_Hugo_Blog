@@ -55,6 +55,12 @@ Download : [Link](https://github.com/Phylliida/orbslam-windows)
 
 ![DBoW2-build](/ORBSLAM2-img/DBoW2-build.JPG)
 
+### Output
+
+```shell
+========== Build: 3 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
+```
+
 ## 安裝g2o
 
 與DBoW2相同，使用`Cmake-gui`道g2o中編譯，開啟專案後將g2o專案屬性改成`.lib`以及`Multi-threaded(/MT)`，不同的是要到C/C++的`Preprocessor`中在`Preprocessor Definitions`編輯，在最下面輸入`WINDOWS`
@@ -64,6 +70,11 @@ Download : [Link](https://github.com/Phylliida/orbslam-windows)
 選擇好後，建置`ALL_BUILD`，建置成功後如下圖
 
 ![g2o-build](/ORBSLAM2-img/g2o-build.JPG)
+
+### Output
+```shell
+========== Build: 3 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
+```
 
 ## 安裝Pangolin
 
