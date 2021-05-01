@@ -8,7 +8,7 @@ comment: true
 categories:
   - ORBSLAM2 程式碼解析
 tags:
-  - ORBSLAM
+  - ORBSLAM2
   - code analysis
 ---
 

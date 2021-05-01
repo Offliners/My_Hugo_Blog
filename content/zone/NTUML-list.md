@@ -20,3 +20,4 @@ draft: false
 |Transformer|[Link](https://offliners.github.io/post/ntuml-week7-1/)|
 |GAN|[Link](https://offliners.github.io/post/ntuml-week7-2/)|
 |BERT|[Link](https://offliners.github.io/post/ntuml-week8/)|
+|Auto-Encoder|[Link](https://offliners.github.io/post/ntuml-week10/)|

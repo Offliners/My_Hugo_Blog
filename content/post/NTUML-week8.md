@@ -17,9 +17,9 @@ tags:
 
 NTUML 2021 Spring Course Syllabus: [Link](https://speech.ee.ntu.edu.tw/~hylee/ml/2021-spring.html)
 
-Youtube Video Link (Chinese): [`Video 1`](https://youtu.be/e422eloJ0W4) [`Video 2`](https://youtu.be/gh0hewYkjgo) [`Video 3`](https://youtu.be/ExXA05i8DEQ)
+Youtube Video Link (Chinese): [`Video 1`](https://youtu.be/e422eloJ0W4) [`Video 2`](https://youtu.be/gh0hewYkjgo) [`Video 3`](https://youtu.be/ExXA05i8DEQ) [`Video 4`](https://youtu.be/WY_E0Sd4K80)
 
-Youtube Video Link (English): [`Video 1`] [`Video 2`] [`Video 3`]
+Youtube Video Link (English): [`Video 1`](https://www.youtube.com/watch?v=mEcVirwmrkA) [`Video 2`](https://www.youtube.com/watch?v=L-ZQ-6vKOxU) [`Video 3`](https://www.youtube.com/watch?v=L-ZQ-6vKOxU) [`Video 4`]
 
 ## Model Introduction
 ![Name](/2021NTUML/Week8/name.JPG)
@@ -162,3 +162,10 @@ BERT能在文字中表現較好是因為透過遮蔽資訊，從上下文中來�
 
 ![Multi-lingual BERT 6](/2021NTUML/Week8/multi-6.JPG)
 實驗結果證實這個假設，雖然不是個很好的翻譯，Multi-lingual BERT表面上看起來把不同語言同樣意思歸在同一類，但仍然有語言的資訊來做區分
+
+## GPT
+![GPT](/2021NTUML/Week8/GPT.JPG)
+BERT的任務是預測被遮蔽的詞是什麼，而GPT則是輸入的詞預測下一個詞是什麼。GPT有點像是transformer的decoder，只是沒有cross-attention
+
+想了更多關於GPT可以參考以下連結 : 
+* GPT-3 : [Video](https://www.youtube.com/watch?v=DOG1L9lvsDY)
