@@ -21,3 +21,6 @@ draft: false
 |GAN|[Link](https://offliners.github.io/post/ntuml-week7-2/)|
 |BERT|[Link](https://offliners.github.io/post/ntuml-week8/)|
 |Auto-Encoder|[Link](https://offliners.github.io/post/ntuml-week10/)|
+|Adversarial Attack|[Link](https://offliners.github.io/post/ntuml-week11/)|
+|Domain Adaptation|`TBD`|
+|Explainable AI|[Link](https://offliners.github.io/post/ntuml-week13/)|
