@@ -64,3 +64,33 @@ Youtube Video Link (English): [`Video 1`](https://www.youtube.com/watch?v=xw6K4n
 ![IFGSM](/2021NTUML/Week11/ifgsm.JPG)
 若FGSM多做幾次就是Iterative FGSM(IFGSM)，但有可能會跑出限制外，所以需將跑出的參數修正回來
 
+## White Box v.s. Black Box
+![White Box v.s. Black Box](/2021NTUML/Week11/box.JPG)
+先前介紹的都是`White Box Attack`，因為需要知道模型的參數才能計算Gradient，所以對於未知模型參數(如線上API服務)的攻擊就是`Black Box Attack`
+
+## Black Box Attack
+![Black Box Attack](/2021NTUML/Week11/blackbox.JPG)
+對於未知的模型，假設知道未知模型是用什麼資料訓練出來的，那只要使用相同的資料訓練一個Proxy network，就會有一定的相似程度，所以攻擊Proxy network成功後的圖片丟入未知的模型就會有一定的成功率。那不知道訓練資料呢? 只需要準備一大堆的資料，丟入未知模型看會輸出什麼，再把這些圖片與模型輸出的資訊來訓練一個Proxy network即可
+
+![Black Box Attack 1](/2021NTUML/Week11/blackbox-1.JPG)
+上表示單一模型對單一模型的攻擊，對角線因為是相同模型的攻擊，因此是White Box Attack，攻擊成功率100%，對於非對角線的部分則是Black Box Attack。如果像下表使用Ensemble Attack的話，
+如-ResNet-152表示使用除了ResNet-152以外的四個模型來攻擊，因此對於下表反而非對角線是White Box Attack，對角線是Black Box Attack，使用Ensemble Attack使得攻擊成功率大幅提升。透過剛剛的表格可以發現Black Box Attack成功非常容易，那為什麼攻擊A模型對於B模型也能成功?這仍然是個待研究的議題，接下來講解普遍相信的結論
+
+* DELVING INTO TRANSFERABLE ADVERSARIAL EXAMPLES AND BLACK-BOX ATTACKS : [Link](https://arxiv.org/pdf/1611.02770.pdf)
+
+![Black Box Attack 2](/2021NTUML/Week11/blackbox-2.JPG)
+上圖每個模型的圖表，橫軸為攻擊該模型可以成功的方向，縱軸是任意方向，而圖表上深藍色的區域為模型會辨識出小丑魚的區域。可以發現每個模型的深藍色區域都蠻類似的，因此攻擊A模型對於B模型也能成功。而這篇論文的結論是攻擊會成功，不是模型的問題而是資料，因為資料特徵的分布使得攻擊不同模型，模型學到差不多的特徵因此才容易成功
+
+* Adversarial Examples Are Not Bugs, They Are Features : [Link](https://arxiv.org/abs/1905.02175)
+
+## One Pixel Attack
+![One Pixel Attack](/2021NTUML/Week11/pixel.JPG)
+那攻擊能到多麼細微呢? 有人可以做到`One Pixel Attack`，只更改圖片的一個pixel
+
+* One pixel attack for fooling deep neural networks : [https://arxiv.org/abs/1710.08864]
+
+## Universal Adversarial Attack
+![Universal Adversarial Attack](/2021NTUML/Week11/universal.JPG)
+甚至有人可以做到用一個特定的雜訊來攻擊所有類別，使影像辨識系統所有類別都辨識錯誤
+
+* Universal adversarial perturbations : [Link](https://arxiv.org/abs/1610.08401)
