@@ -19,7 +19,7 @@ NTUML 2021 Spring Course Syllabus: [Link](https://speech.ee.ntu.edu.tw/~hylee/ml
 
 Youtube Video Link (Chinese): [`Video 1`](https://youtu.be/xGQKhbjrFRk) [`Video 2`](https://youtu.be/z-Q9ia5H2Ig)
 
-Youtube Video Link (English): [`Video 1`](https://www.youtube.com/watch?v=xw6K4naFWFg) [`Video 2`]
+Youtube Video Link (English): [`Video 1`](https://www.youtube.com/watch?v=xw6K4naFWFg) [`Video 2`](https://www.youtube.com/watch?v=kRmBiV2X810)
 
 ## Motivation 
 ![Motivation](/2021NTUML/Week11/motivation.JPG)
@@ -76,21 +76,88 @@ Youtube Video Link (English): [`Video 1`](https://www.youtube.com/watch?v=xw6K4n
 上表示單一模型對單一模型的攻擊，對角線因為是相同模型的攻擊，因此是White Box Attack，攻擊成功率100%，對於非對角線的部分則是Black Box Attack。如果像下表使用Ensemble Attack的話，
 如-ResNet-152表示使用除了ResNet-152以外的四個模型來攻擊，因此對於下表反而非對角線是White Box Attack，對角線是Black Box Attack，使用Ensemble Attack使得攻擊成功率大幅提升。透過剛剛的表格可以發現Black Box Attack成功非常容易，那為什麼攻擊A模型對於B模型也能成功?這仍然是個待研究的議題，接下來講解普遍相信的結論
 
+有興趣可以參考這篇論文 :
 * DELVING INTO TRANSFERABLE ADVERSARIAL EXAMPLES AND BLACK-BOX ATTACKS : [Link](https://arxiv.org/pdf/1611.02770.pdf)
 
 ![Black Box Attack 2](/2021NTUML/Week11/blackbox-2.JPG)
 上圖每個模型的圖表，橫軸為攻擊該模型可以成功的方向，縱軸是任意方向，而圖表上深藍色的區域為模型會辨識出小丑魚的區域。可以發現每個模型的深藍色區域都蠻類似的，因此攻擊A模型對於B模型也能成功。而這篇論文的結論是攻擊會成功，不是模型的問題而是資料，因為資料特徵的分布使得攻擊不同模型，模型學到差不多的特徵因此才容易成功
 
+有興趣可以參考這篇論文 :
 * Adversarial Examples Are Not Bugs, They Are Features : [Link](https://arxiv.org/abs/1905.02175)
 
 ## One Pixel Attack
 ![One Pixel Attack](/2021NTUML/Week11/pixel.JPG)
 那攻擊能到多麼細微呢? 有人可以做到`One Pixel Attack`，只更改圖片的一個pixel
 
+有興趣可以參考這篇論文 :
 * One pixel attack for fooling deep neural networks : [https://arxiv.org/abs/1710.08864]
 
 ## Universal Adversarial Attack
 ![Universal Adversarial Attack](/2021NTUML/Week11/universal.JPG)
 甚至有人可以做到用一個特定的雜訊來攻擊所有類別，使影像辨識系統所有類別都辨識錯誤
 
+有興趣可以參考這篇論文 :
 * Universal adversarial perturbations : [Link](https://arxiv.org/abs/1610.08401)
+
+## Attack in the Physical World
+![Attack in the Physical World](/2021NTUML/Week11/real.JPG)
+剛剛介紹的方法都是在虛擬世界進行，要在現實中進行Attack的話，需要駭進系統為每張圖片加入雜訊嗎?實際上可以不用，有人發明一個特殊的眼鏡，帶上它的人會被人臉辨識系統辨識成知名的藝人，但有些人可能會有些疑慮，如現實是3D世界會有角度問題，但剛剛也提到是可以做到Universal Adversarial Attack，且經過實測從各個角度看這個人都會被辨識錯誤。且論文中也探討許多應用在現實中的各種問題，如攝像頭解析度，會不會雜訊太小使攝像頭偵測不到，或者是電腦與實際做出的成品的色差不同等等
+
+有興趣可以參考這篇論文 : 
+* Accessorize to a Crime: Real and Stealthy Attacks on State-of-the-Art Face Recognition : [Link](https://www.cs.cmu.edu/~sbhagava/papers/face-rec-ccs16.pdf)
+
+![Attack in the Physical World 1](/2021NTUML/Week11/real-1.JPG)
+除了人臉辨識，由於自駕車發展快速，有人也對車牌辨識等進行攻擊，將一些號誌貼上貼紙使系統辨識錯誤
+
+![Attack in the Physical World 2](/2021NTUML/Week11/real-2.JPG)
+
+但這些貼紙太招搖，容易被人發覺，因此有人去改變號誌字體的特徵，使其比較不招搖一些，向上圖限速35，把3拉長一點系統會辨識成限速85，下面有DEMO影片
+
+{{< youtube 4uGV_fRj0UA>}}
+
+## Adversarial Reprogramming
+![Adversarial Reprogramming](/2021NTUML/Week11/repro.JPG)
+攻擊甚至能改變模型的行為，如ImageNet原本是辨識物體的模型，而有人想做一個數圖片中的方塊，但不想自己訓練而是選擇寄生在已有的模型上，當輸入圖片有4個方塊，ImageNet就會輸出tiger shark，而使用者可以知道這張圖片有4個方塊，這樣就可以操控ImageNet來做原本不是它該做的事
+
+有興趣可以參考這篇論文 : 
+* Adversarial Reprogramming of Neural Networks : [Link](https://arxiv.org/abs/1806.11146)
+
+## "Backdoor" in Model
+!["Backdoor" in Model](/2021NTUML/Week11/backdoor.JPG)
+之前的攻擊都是在輸入時加入雜訊，但有些攻擊可能從訓練就開始，在訓練資料中加入被攻擊的圖片，不是正確的圖片標記錯誤這種，而是正確的圖片加入看不見的雜訊。當訓練完成後，輸入其他圖片辨識都正確，但在特定的圖片會發生錯誤。因此使用未知的公開資料集時要小心，雖然目前還有很多限制，但這樣的可能性仍然存在
+
+有興趣可以參考這篇論文 :
+* Poison Frogs! Targeted Clean-Label Poisoning Attacks on Neural Networks : [Link](https://arxiv.org/abs/1804.00792)
+
+## Defense
+![Defense](/2021NTUML/Week11/defense.JPG)
+提了這麼多種的攻擊，接下來介紹如何防禦，防禦有分兩種，一種是`Passive Defense`，另一種是`Proactive Defense`
+
+## Passive Defense
+![Passive Defense](/2021NTUML/Week11/passive.JPG)
+Passive Defense是不動訓練好的模型，而是將輸入圖片經過濾波，那要做怎樣的濾波呢?其實使用模糊化的方式就可以達到不錯的防禦
+
+![Passive Defense 1](/2021NTUML/Week11/passive-1.JPG)
+先前提到加入雜訊的貓咪被辨識成鍵盤，若將這張圖片經過模糊化再去辨識結果就變正確了，理由是攻擊只會在特定的方向上，不是任意一個雜訊都可以攻擊成功，而經過模糊化後能改變攻擊方向，使其失敗。雖然防禦成功，但有副作用，如原本辨識成功的圖片信心分數會下降
+
+![Passive Defense 2](/2021NTUML/Week11/passive-2.JPG)
+除了模糊化以外，還有使用會失真的壓縮或者使用Generator來重新繪製圖片，由於微小的雜訊是Generator沒有看過的，因此重新繪製時可能無法復原，因此能防禦
+
+有興趣可以參考以下論文 :
+* Feature Squeezing: Detecting Adversarial Examples in Deep Neural Networks : [Link](https://arxiv.org/abs/1704.01155)
+* Shield: Fast, Practical Defense and Vaccination for Deep Learning using JPEG Compression : [Link](https://arxiv.org/abs/1802.06816)
+* Defense-GAN: Protecting Classifiers Against Adversarial Attacks Using Generative Models : [Link](https://arxiv.org/abs/1805.06605)
+
+![Passive Defense 3](/2021NTUML/Week11/passive-3.JPG)
+但Passive Defense有個弱點，就是當攻擊者知道這模型會防禦時，就把攻擊整個加入模糊化的模型，因為模糊化就像是在模型前再加入一層，所以攻擊加入模糊化後的模型就可以躲過這種防禦方式。因此使用Passive Defense時，當攻擊者不知道時防禦效果很強，但知道後就會失去效用。要強化防禦的話就是加入隨機性，比如這篇論文對輸入圖片隨機加入各種圖片處理的方式，如更改大小、隨機填充等，但當攻擊者知道隨機的分布時，就有可能被攻破
+
+有興趣可以參考這篇論文 :
+* Mitigating Adversarial Effects Through Randomization : [Link](https://arxiv.org/abs/1711.01991)
+
+## Proactive Defense
+![Proactive Defense](/2021NTUML/Week11/proactive.JPG)
+另一種防禦是Proactive Defense，會使用`Adversarial Training`的方式，先訓練好一個模型，再去將輸入圖片加入攻擊的雜訊但標記成正確產生一個被攻擊的資料集，將這個資料集拿去重新訓練。簡單來說就是訓練好模型，然後找漏洞，再去補漏洞，是一種Data Augmentation的方法。這樣的防禦缺點是不太能抵擋新的攻擊，因為新的攻擊造成的漏洞是訓練時沒看過的。另一個缺點是需要較大的運算資源，因為一直擴增訓練資料來抵擋攻擊
+
+但有人使用特殊方法來做到Adversarial Training的效果且不需要較大的運算，有興趣可以參考這篇論文 : 
+* Adversarial Training for Free! : [Link](https://arxiv.org/abs/1904.12843)
+
