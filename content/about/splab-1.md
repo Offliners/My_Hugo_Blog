@@ -5,6 +5,6 @@ draft: false
 comment: false
 ---
 
-### Signal Processing Lab (Prof. Shuen-De Wu)
+### Signal Processing Lab (Supervised by Prof. Shuen-De Wu)
 #### Research : `Nonlinear Signal Prediction and Causality Analysis Based on Granger Causality with Implementation of CNN-BiLSTM Model`
 

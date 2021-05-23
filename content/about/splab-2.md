@@ -5,6 +5,6 @@ draft: false
 comment: false
 ---
 
-### Signal Processing Lab (Prof. Shuen-De Wu)
+### Signal Processing Lab (Supervised by Prof. Shuen-De Wu)
 #### Research : `Sleeping Posture Recognition Algorithm and System Applied to Pressure Sensor Mattress based on Convolutional Neural Network`
 

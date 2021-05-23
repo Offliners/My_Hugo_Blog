@@ -115,5 +115,5 @@ mono_tum path_to_vocabulary path_to_settings path_to_sequence
 
 執行結果
 
-![mono_tum](/ORBSLAM2-img/mono_tum.gif)
+{{< youtube 859sYJtzOhQ>}}
 

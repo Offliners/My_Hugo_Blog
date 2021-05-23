@@ -103,4 +103,40 @@ Attention在什麼情況中可以什麼情況中不行，仍是尚待研究的�
 ![How a network processes the input data? 3](/2021NTUML/Week13/probing.JPG)
 因為肉眼判斷仍有極限，可能有些現象沒觀察到，所以可以訓練`Probing`，也就是個分類器，例如訓練 個POS的分類器，將BERT中的向量輸入來判斷是什麼詞性的字彙，或者訓練一個NER分類器來判斷這個詞彙是地名還是人名等等。但要注意分類器的強度，有時候正確率低不代表這些向量沒有好的資訊，有可能是分類器本身就不強
 
+## Global Explanation : EXPLAIN THE WHOLE MODEL
+![Global Explanation](/2021NTUML/Week13/global.JPG)
+Global Explanation不會針對特定的輸入做Explanation。假設有一張圖片輸入至CNN模型，如果發現Filter 1有很多neuron有較大的值，表示Filter 1看到許多重要的特徵。但要使用Global Explanation的話，就不能針對這張圖片，而是要探討Filter 1想要在圖片上看到什麼樣的特徵，那要怎麼做?就產生一張圖片包含所有Filter 1想看到的特徵，這樣就可以看這張圖片來了解Filter 1想要偵測到什麼特徵
+
+![Global Explanation 1](/2021NTUML/Week13/global-1.JPG)
+那要怎麼找這張圖片呢?輸入未知圖片X經過Filter 1後所得到的值要越大越好，這張圖片就是我們要的，解這樣的問題就會變成Gradient Ascent。觀察這張圖片就可以了解Filter 1想偵測的特徵
+
+![MNIST](/2021NTUML/Week13/case-7.JPG)
+上圖為實際CNN模型做MNIST訓練後，把第二層卷積層的Filter做Global Explanation後的結果，可以發現每個Filter都有它想偵測的筆畫方向
+
+![MNIST 1](/2021NTUML/Week13/case-8.JPG)
+那如果看最後一層做Global Explanation的結果呢?會是0~9的圖形嗎?最後一層的輸出會是0~9的機率分布，假設想看輸出1的話，則將未知圖片X輸入模型，看怎樣的X能使輸出1的機率最高。依此類推做0~9後發現每個X都不是0~9的形狀，而是一堆雜訊，為什麼看到這些雜訊後CNN會覺得是數字?因為知道adversarial attack，我們知道即使輸入雜訊，機器也能辨識出一些東西，但這沒辦法給出令人信服的答案，要怎麼辦呢?
+
+![MNIST 2](/2021NTUML/Week13/case-9.JPG)
+答案是加入一些限制，輸入的未知圖片X除了使模型輸出特定數字的機率最大以外還要有一個限制，就是這張圖片有多像是該數字，像上右圖加入的限制是圖片X的白點越少越好，但仍不像數字，因為加入限制與一些超參數調整不是那麼容易
+
+![Case](/2021NTUML/Week13/case-10.JPG)
+像上圖是對影像辨識模型下了許多功夫、限制與超參數的調整才達到比較好的結果，這需要取決於對影像的了解程度
+
+有興趣可以參考這篇論文 : 
+* Understanding Neural Networks Through Deep Visualization : [Link](https://arxiv.org/abs/1506.06579)
+
+## Constraint from Generator
+![Constraint from Generator](/2021NTUML/Week13/generator.JPG)
+若需要產生較清楚圖片的話，可以使用Generator的技術來找雜訊z，再透過Generator來產生未知圖片X。將Generator與Classifier接在一起，輸入雜訊z後得到圖片，這圖片會使Classifier輸出特定類別的機率越高越好，這樣就可以將z輸入給Generator看圖片X長什麼樣子
+
+![Constraint from Generator 1](/2021NTUML/Week13/generator-1.JPG)
+透過這樣的技術，可以找到較符合我們想像的圖片。但有些人可能覺得這有點太強調，因為原本機器看到的與我們想看到的不同，因此硬是用一些方法來改變。因為Explainable ML往往會使用合理的方法來將機器所想的來接近人們想看到的，使人們得到較信服的理由
+
+## Outlook
+![Outlook](/2021NTUML/Week13/lime.JPG)
+Explainable ML除了Local Explanation與Global Explanation，還有個技術是使用較簡單的模型想辦法來模仿複雜模型的行為，假設能模仿那就分析簡單模型的行為就好，假設使用Linear model來模仿複雜模型成功的話，那可以分析Linear model來了解複雜的黑盒子，但會存在許多問題像是簡單模型真的能模仿複雜的模型嗎?當然是不行，因此有個經典的方法`LIME`，只模仿一小區塊的行為而已
+
+若想更了解Lime可以參考以下影片 : 
+* Using a Model to Explain Another : [Video](https://youtu.be/K1mWgthGS-A)
+* Lime : [Video](https://youtu.be/OjqIVSwly4k)
 
