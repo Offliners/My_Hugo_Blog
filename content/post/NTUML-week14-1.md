@@ -67,7 +67,7 @@ Domain Adversarial Training就是訓練一個二元分類器，輸入這些分�
 * Test-Time Training with Self-Supervision for Generalization under Distribution Shifts : [Link](https://arxiv.org/abs/1909.13231)
 
 ![Domain Adaptation 7](/2021NTUML/Week14/adaptation-7.JPG)
-更嚴峻的情況是對Target domain的資料一無所知，這時就沒辦法做`Domain Adaptation`，那要怎麼辦?
+更嚴峻的情況是對Target domain的資料一無所知，這時就沒辦法做Domain Adaptation，那要怎麼辦?
 
 ## Domain Generalization
 ![Domain Generalization](/2021NTUML/Week14/general.JPG)
