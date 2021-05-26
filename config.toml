@@ -21,15 +21,16 @@ googleAnalytics = "G-WFQ2VM3C00"
     favicon = "images/dino.png"
     logo = "images/Offliner.png"
     portrait = "images/Offliner.png"
+    custom_css = ["css/custom.css"]
     bio = """
-    <p>Name : Zheng-Yan Wu</p>
-    <p>Birthday : 1999/03/28</p>
-    <p>Native country : Taiwan</p>
-    <p>Interests : Playing Chess or Go</p>
-    <p>Job : Student</p>
-    <p>Expertise : Mechanical & Electrical engineering</p> 
-    <p>Programming Languages : C, C++, C#, Python</p>
-    <p>Motto : Never Forget How You Got Here</p>
+    Name : Zheng-Yan Wu
+    <br>Birthday : 1999/03/28
+    <br>Native country : Taiwan
+    <br>Interests : Playing Chess or Go
+    <br>Job : Student
+    <br>Expertise : Mechanical / Electrical engineering 
+    <br>Proficient Programming Languages : C, C++, C#, Python
+    <br>Motto : Never Forget How You Got Here
     """
     description = "No code, No life"
     typewriter = [
