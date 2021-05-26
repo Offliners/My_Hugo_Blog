@@ -1,9 +1,10 @@
 ---
-title: "NTU - 機器學習 Week 8 - BERT"
+title: "NTU Machine Learning Week 8 - BERT"
 date: 2021-04-21T21:33:28+08:00
 draft: false
 toc: true
 comment: true
+description: NTU Machine Learning 2021 Spring Week 8 - BERT
 
 categories:
   - NTU 機器學習 note

@@ -1,9 +1,10 @@
 ---
-title: "NTU - 機器學習 Week 7 - GAN"
+title: "NTU Machine Learning Week 7 - GAN"
 date: 2021-04-15T20:04:48+08:00
 draft: false
 toc: true
 comment: true
+description: NTU Machine Learning 2021 Spring Week 7 - GAN
 
 categories:
   - NTU 機器學習 note

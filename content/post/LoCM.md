@@ -1,10 +1,10 @@
 ---
 title: "Legends of Code & Magic 新手指南"
 date: 2021-04-24T11:42:41+08:00
-
 draft: false
 toc: true
 comment: true
+description: CodinGame - How to play Legends of Code & Magic
 
 tags:
   - LoCM

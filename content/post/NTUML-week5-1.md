@@ -1,9 +1,10 @@
 ---
-title: "NTU - 機器學習 Week 5 - Self-Attention"
+title: "NTU Machine Learning Week 5 - Self-Attention"
 date: 2021-04-10T23:06:41+08:00
 draft: false
 toc: true
 comment: true
+description: NTU Machine Learning 2021 Spring Week 5 - Self-Attention
 
 categories:
   - NTU 機器學習 note

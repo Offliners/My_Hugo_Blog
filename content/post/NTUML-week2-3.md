@@ -1,9 +1,10 @@
 ---
-title: "NTU - 機器學習 Week 2 - Tips for Training: Batch and Momentum"
+title: "NTU Machine Learning Week 2 - Tips for Training: Batch and Momentum"
 date: 2021-04-05T21:55:10+08:00
 draft: false
 toc: true
 comment: true
+description: NTU Machine Learning 2021 Spring Week 2 - Tips for Training Batch and Momentum
 
 categories:
   - NTU 機器學習 note

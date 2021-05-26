@@ -1,9 +1,10 @@
 ---
-title: "NTU - 機器學習 Week 10 - Auto-Encoder"
+title: "NTU Machine Learning Week 10 - Auto-Encoder"
 date: 2021-05-01T18:21:00+08:00
 draft: false
 toc: true
 comment: true
+description: NTU Machine Learning 2021 Spring Week 10 - Auto-Encoder
 
 categories:
   - NTU 機器學習 note

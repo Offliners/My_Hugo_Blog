@@ -1,9 +1,10 @@
 ---
-title: "NTU - 機器學習 Week 11 - Adversarial Attack"
+title: "NTU Machine Learning Week 11 - Adversarial Attack"
 date: 2021-05-15T20:36:57+08:00
 draft: false
 toc: true
 comment: true
+description: NTU Machine Learning 2021 Spring Week 11 - Adversarial Attack
 
 categories:
   - NTU 機器學習 note
@@ -111,7 +112,7 @@ Youtube Video Link (English): [`Video 1`](https://www.youtube.com/watch?v=xw6K4n
 
 ![Attack in the Physical World 2](/2021NTUML/Week11/real-2.JPG)
 
-但這些貼紙太招搖，容易被人發覺，因此有人去改變號誌字體的特徵，使其比較不招搖一些，向上圖限速35，把3拉長一點系統會辨識成限速85，下面有DEMO影片
+但這些貼紙太招搖，容易被人發覺，因此有人去改變號誌字體的特徵，使其比較不招搖一些，像上圖限速35，把3拉長一點系統會辨識成限速85，下面有DEMO影片
 
 {{< youtube 4uGV_fRj0UA>}}
 

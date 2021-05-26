@@ -1,9 +1,10 @@
 ---
-title: "NTU - 機器學習 Week 14 - Domain Adaptation"
+title: "NTU Machine Learning Week 14 - Domain Adaptation"
 date: 2021-05-24T15:33:26+08:00
 draft: false
 toc: true
 comment: true
+description: NTU Machine Learning 2021 Spring Week 14 - Domain Adaptation
 
 categories:
   - NTU 機器學習 note

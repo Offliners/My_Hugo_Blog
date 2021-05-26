@@ -1,9 +1,10 @@
 ---
-title: "NTU - 機器學習 Week 5 - Normalization"
+title: "NTU Machine Learning Week 5 - Normalization"
 date: 2021-04-11T15:34:25+08:00
 draft: false
 toc: true
 comment: true
+description: NTU Machine Learning 2021 Spring Week 5 - Normalization
 
 categories:
   - NTU 機器學習 note

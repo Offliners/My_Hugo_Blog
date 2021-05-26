@@ -1,9 +1,10 @@
 ---
-title: "NTU - 機器學習 Week 7 - Transformer"
+title: "NTU Machine Learning Week 7 - Transformer"
 date: 2021-04-13T20:43:16+08:00
 draft: false
 toc: true
 comment: true
+description: NTU Machine Learning 2021 Spring Week 7 - Transformer
 
 categories:
   - NTU 機器學習 note

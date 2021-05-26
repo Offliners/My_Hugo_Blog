@@ -1,9 +1,10 @@
 ---
-title: "ORBSLAM2 程式碼解析 - 系統流程"
+title: "ORBSLAM2 程式碼解析 - System"
 date: 2021-04-27T19:39:14+08:00
 draft: false
 toc: true
 comment: true
+description: ORBSLAM2 Code Analysis - System
 
 categories:
   - ORBSLAM2 程式碼解析
