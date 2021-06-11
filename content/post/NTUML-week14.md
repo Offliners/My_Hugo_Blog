@@ -20,7 +20,7 @@ NTUML 2021 Spring Course Syllabus: [Link](https://speech.ee.ntu.edu.tw/~hylee/ml
 
 Youtube Video Link (Chinese): [`Video`](https://youtu.be/Mnk_oUrgppM)
 
-Youtube Video Link (English): [`Video`]
+Youtube Video Link (English): [`Video`](https://www.youtube.com/watch?v=8AKqH6V9kjE)
 
 ## Domain Shift
 ![Domain Shift](/2021NTUML/Week14/domain.JPG)

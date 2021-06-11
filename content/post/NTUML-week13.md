@@ -20,7 +20,7 @@ NTUML 2021 Spring Course Syllabus: [Link](https://speech.ee.ntu.edu.tw/~hylee/ml
 
 Youtube Video Link (Chinese): [`Video 1`](https://youtu.be/WQY85vaQfTI) [`Video 2`](https://youtu.be/0ayIPqbdHYQ)
 
-Youtube Video Link (English): [`Video 1`](https://www.youtube.com/watch?v=4rVD1EOaAX4) [`Video 2`]
+Youtube Video Link (English): [`Video 1`](https://www.youtube.com/watch?v=4rVD1EOaAX4) [`Video 2`](https://www.youtube.com/watch?v=5VPy7OGlGMQ)
 
 ## Why we need Explainable ML?
 ![Why we need Explainable ML?](/2021NTUML/Week13/issue.JPG)
