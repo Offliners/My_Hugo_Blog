@@ -20,7 +20,7 @@ NTUML 2021 Spring Course Syllabus: [Link](https://speech.ee.ntu.edu.tw/~hylee/ml
 
 Youtube Video Link (Chinese): [`Video 1`](https://youtu.be/XWukX-ayIrs) [`Video 2`](https://youtu.be/US8DFaAZcp4) [`Video 3`](https://youtu.be/kk6DqWreLeU) [`Video 4`](https://youtu.be/73YyF1gmIus) [`Video 5`](https://youtu.be/75rZwxKBAf0)
 
-Youtube Video Link (English): [`Video 1`](https://www.youtube.com/watch?v=0oucZNfBXlI) [`Video 2`](https://youtu.be/jbN0oYLtXps) [`Video 3`] [`Video 4`](https://youtu.be/pibO_5JhQ4U) [`Video 5`](https://youtu.be/9H3ShV57lHs)
+Youtube Video Link (English): [`Video 1`](https://www.youtube.com/watch?v=0oucZNfBXlI) [`Video 2`](https://youtu.be/jbN0oYLtXps) [`Video 3`](https://youtu.be/Cf-WkM-Xef0) [`Video 4`](https://youtu.be/pibO_5JhQ4U) [`Video 5`](https://youtu.be/9H3ShV57lHs)
 
 ## What is RL ?
 ![ML](/2021NTUML/Week16/ML.JPG)
