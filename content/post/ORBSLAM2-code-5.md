@@ -82,3 +82,158 @@ KeyFrame
 ├────── weightComp  // 權重的比較
 ├────── lId  // 比較兩個關鍵幀的幀號
 ```
+
+## 建構函數
+```C++
+KeyFrame::KeyFrame(Frame &F, Map *pMap, KeyFrameDatabase *pKFDB):
+    mnFrameId(F.mnId),  mTimeStamp(F.mTimeStamp), mnGridCols(FRAME_GRID_COLS), mnGridRows(FRAME_GRID_ROWS),
+    mfGridElementWidthInv(F.mfGridElementWidthInv), mfGridElementHeightInv(F.mfGridElementHeightInv),
+    mnTrackReferenceForFrame(0), mnFuseTargetForKF(0), mnBALocalForKF(0), mnBAFixedForKF(0),
+    mnLoopQuery(0), mnLoopWords(0), mnRelocQuery(0), mnRelocWords(0), mnBAGlobalForKF(0),
+    fx(F.fx), fy(F.fy), cx(F.cx), cy(F.cy), invfx(F.invfx), invfy(F.invfy),
+    mbf(F.mbf), mb(F.mb), mThDepth(F.mThDepth), N(F.N), mvKeys(F.mvKeys), mvKeysUn(F.mvKeysUn),
+    mvuRight(F.mvuRight), mvDepth(F.mvDepth), mDescriptors(F.mDescriptors.clone()),
+    mBowVec(F.mBowVec), mFeatVec(F.mFeatVec), mnScaleLevels(F.mnScaleLevels), mfScaleFactor(F.mfScaleFactor),
+    mfLogScaleFactor(F.mfLogScaleFactor), mvScaleFactors(F.mvScaleFactors), mvLevelSigma2(F.mvLevelSigma2),
+    mvInvLevelSigma2(F.mvInvLevelSigma2), mnMinX(F.mnMinX), mnMinY(F.mnMinY), mnMaxX(F.mnMaxX),
+    mnMaxY(F.mnMaxY), mK(F.mK), mvpMapPoints(F.mvpMapPoints), mpKeyFrameDB(pKFDB),
+    mpORBvocabulary(F.mpORBvocabulary), mbFirstConnection(true), mpParent(NULL), mbNotErase(false),
+    mbToBeErased(false), mbBad(false), mHalfBaseline(F.mb/2), mpMap(pMap)
+{
+    mnId=nNextId++;
+
+    mGrid.resize(mnGridCols);  // 根據網格的行數來重置網格大小
+    for(int i=0; i<mnGridCols;i++)
+    {
+        mGrid[i].resize(mnGridRows);
+        for(int j=0; j<mnGridRows; j++)
+            mGrid[i][j] = F.mGrid[i][j];
+    }
+
+    SetPose(F.mTcw);  // 將關鍵幀的姿態傳給該關鍵幀
+}
+```
+此建構函數輸入參數為
+* Frame &F : 當前幀
+* Map *pMap : 地圖
+* KeyFrameDatabase *pKFDB : 關鍵幀數據集的指標
+
+## 位姿相關
+### SetPose
+```C++
+void KeyFrame::SetPose(const cv::Mat &Tcw_)
+{
+    unique_lock<mutex> lock(mMutexPose);
+    Tcw_.copyTo(Tcw);
+    cv::Mat Rcw = Tcw.rowRange(0,3).colRange(0,3);
+    cv::Mat tcw = Tcw.rowRange(0,3).col(3);
+    cv::Mat Rwc = Rcw.t();
+    Ow = -Rwc*tcw;  // 相機的光心
+
+    Twc = cv::Mat::eye(4,4,Tcw.type());
+    Rwc.copyTo(Twc.rowRange(0,3).colRange(0,3));
+    Ow.copyTo(Twc.rowRange(0,3).col(3));
+    cv::Mat center = (cv::Mat_<float>(4,1) << mHalfBaseline, 0 , 0, 1);
+    Cw = Twc*center;
+}
+```
+此函數輸入參數為
+* Tcw_ : 當前幀的位姿
+
+### GetPos
+```C++
+cv::Mat KeyFrame::GetPose()
+{
+    unique_lock<mutex> lock(mMutexPose);
+    return Tcw.clone();
+}
+```
+
+### GetPoseInverse
+```C++
+cv::Mat KeyFrame::GetPoseInverse()
+{
+    unique_lock<mutex> lock(mMutexPose);
+    return Twc.clone();
+}
+```
+
+### GetCamercaCenter
+```C++
+cv::Mat KeyFrame::GetCameraCenter()
+{
+    unique_lock<mutex> lock(mMutexPose);
+    return Ow.clone();
+}
+```
+
+### GetStereoCenter
+```C++
+cv::Mat KeyFrame::GetStereoCenter()
+{
+    unique_lock<mutex> lock(mMutexPose);
+    return Cw.clone();
+}
+```
+
+### GetRotation
+```C++
+cv::Mat KeyFrame::GetRotation()
+{
+    unique_lock<mutex> lock(mMutexPose);
+    return Tcw.rowRange(0,3).colRange(0,3).clone();
+}
+```
+
+### GetTranslation
+```C++
+cv::Mat KeyFrame::GetTranslation()
+{
+    unique_lock<mutex> lock(mMutexPose);
+    return Tcw.rowRange(0,3).col(3).clone();
+}
+```
+
+### Covisibility Graph相關
+### AddConnection
+### EraseConnection
+### UpdateConnection
+### UpdateBestCovisibles
+### GetConnectedKeyFrames
+### GetVectorCovisibleKeyFrames
+### GetBestCovisibleKeyFrame
+### GetCovisibleByWeight
+### GetWeight
+### SetNoErase
+### SetErase
+### SetBadFlag
+### isBad
+### AddLoopEdge
+### GetLoopEdges
+
+## Spanning Tree相關
+### AddChild
+### EraseChild
+### ChangeParent
+### GetChild
+### GetParent
+### hasChild
+
+## MapPoint相關
+### AddMapPoint
+### EraseMapPointMatch
+### EraseMapPointMatch
+### ReplaceMapPointMatch
+### TrackedMapPoint
+### GetMapPointMatch
+### GetMapPoints
+### GetMapPoint
+
+## Other
+### ComputeBoW
+### GetFeatureInArea
+### UnprojectStereo
+### IsInImage
+### ComputeSceneMedianDepth
+### weightComp
+### lId
