@@ -194,10 +194,145 @@ cv::Mat KeyFrame::GetTranslation()
 }
 ```
 
-### Covisibility Graph相關
+## Covisibility Graph相關
 ### AddConnection
+```C++
+void KeyFrame::AddConnection(KeyFrame *pKF, const int &weight)
+{
+    {
+        unique_lock<mutex> lock(mMutexConnections);
+        if(!mConnectedKeyFrameWeights.count(pKF))  // map::count函數返回0為之前有連結過；返回1為有連結過
+            mConnectedKeyFrameWeights[pKF]=weight;
+        else if(mConnectedKeyFrameWeights[pKF]!=weight)  // 有連結過但權重有變化的話，也要更新權重
+            mConnectedKeyFrameWeights[pKF]=weight;
+        else
+            return;
+    }
+
+    UpdateBestCovisibles();
+}
+```
+
+此函數輸入參數為 : 
+* KeyFrame *pKF : 需要連結的關鍵幀
+* const int &weight : 權重，即該關鍵幀與pKF共同觀測到的3D點數量
+
 ### EraseConnection
+```C++
+void KeyFrame::EraseConnection(KeyFrame* pKF)
+{
+    bool bUpdate = false;
+    {
+        unique_lock<mutex> lock(mMutexConnections);
+        if(mConnectedKeyFrameWeights.count(pKF))  // 如果有連結關係則清除
+        {
+            mConnectedKeyFrameWeights.erase(pKF);
+            bUpdate=true;
+        }
+    }
+
+    // 如果有刪除連結關係的話，須對權重進行排序
+    if(bUpdate)
+        UpdateBestCovisibles();
+}
+```
+
+此函數用來清除某一個關鍵幀與該關鍵幀其他幀連結的邊
+
 ### UpdateConnection
+```C++
+void KeyFrame::UpdateConnections()
+{
+    map<KeyFrame*,int> KFcounter;
+
+    vector<MapPoint*> vpMP;
+
+    {
+        // 獲取該關鍵幀地所有3D點
+        unique_lock<mutex> lockMPs(mMutexFeatures);
+        vpMP = mvpMapPoints;
+    }
+
+    // 統計每一個關鍵幀有多少關鍵幀與它存在共視關係，將統計結果儲存在KFcounter
+    for(vector<MapPoint*>::iterator vit=vpMP.begin(), vend=vpMP.end(); vit!=vend; vit++)
+    {
+        MapPoint* pMP = *vit;
+
+        if(!pMP)
+            continue;
+
+        if(pMP->isBad())
+            continue;
+
+        // observations紀錄可以觀測到該MapPoint的所有關鍵幀
+        map<KeyFrame*,size_t> observations = pMP->GetObservations();
+
+        for(map<KeyFrame*,size_t>::iterator mit=observations.begin(), mend=observations.end(); mit!=mend; mit++)
+        {
+            if(mit->first->mnId==mnId)  // 自身與自身的不算共視關係
+                continue;
+            KFcounter[mit->first]++;
+        }
+    }
+
+    if(KFcounter.empty())  // 若都沒有共視關係則返回
+        return;
+
+    
+    int nmax=0;
+    KeyFrame* pKFmax=NULL;
+    int th = 15;
+
+    vector<pair<int,KeyFrame*> > vPairs;
+    vPairs.reserve(KFcounter.size());
+    for(map<KeyFrame*,int>::iterator mit=KFcounter.begin(), mend=KFcounter.end(); mit!=mend; mit++)
+    {
+        if(mit->second>nmax)
+        {
+            nmax=mit->second;
+            pKFmax=mit->first;
+        }
+        if(mit->second>=th)
+        {
+            vPairs.push_back(make_pair(mit->second,mit->first));
+            (mit->first)->AddConnection(this,mit->second);
+        }
+    }
+
+    if(vPairs.empty())
+    {
+        vPairs.push_back(make_pair(nmax,pKFmax));
+        pKFmax->AddConnection(this,nmax);
+    }
+
+    sort(vPairs.begin(),vPairs.end());
+    list<KeyFrame*> lKFs;
+    list<int> lWs;
+    for(size_t i=0; i<vPairs.size();i++)
+    {
+        lKFs.push_front(vPairs[i].second);
+        lWs.push_front(vPairs[i].first);
+    }
+
+    {
+        unique_lock<mutex> lockCon(mMutexConnections);
+
+        // mspConnectedKeyFrames = spConnectedKeyFrames;
+        mConnectedKeyFrameWeights = KFcounter;
+        mvpOrderedConnectedKeyFrames = vector<KeyFrame*>(lKFs.begin(),lKFs.end());
+        mvOrderedWeights = vector<int>(lWs.begin(), lWs.end());
+
+        if(mbFirstConnection && mnId!=0)
+        {
+            mpParent = mvpOrderedConnectedKeyFrames.front();
+            mpParent->AddChild(this);
+            mbFirstConnection = false;
+        }
+
+    }
+}
+```
+
 ### UpdateBestCovisibles
 ### GetConnectedKeyFrames
 ### GetVectorCovisibleKeyFrames
